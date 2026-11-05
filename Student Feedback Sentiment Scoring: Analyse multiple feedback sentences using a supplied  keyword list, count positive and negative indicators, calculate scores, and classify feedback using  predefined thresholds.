@@ -1,0 +1,63 @@
+
+positive_words = ["good", "excellent", "helpful", "nice", "best"]
+negative_words = ["bad", "poor", "worst", "boring", "difficult"]
+
+n = int(input("Enter number of feedbacks: "))
+
+for i in range(n):
+    feedback = input("\nEnter student feedback: ")
+    feedback = feedback.lower()
+
+    positive = 0
+    negative = 0
+
+    words = feedback.split()
+
+    for word in words:
+        if word in positive_words:
+            positive = positive + 1
+
+        elif word in negative_words:
+            negative = negative + 1
+
+    score = positive - negative
+
+    print("\nPositive words:", positive)
+    print("Negative words:", negative)
+    print("Sentiment Score:", score)
+
+    if score > 0:
+        print("Result: Positive Feedback")
+
+    elif score < 0:
+        print("Result: Negative Feedback")
+
+    else:
+        print("Result: Neutral Feedback")
+output :
+Enter number of feedbacks: 7
+
+Enter student feedback: teaching is good and helpful 
+
+Positive words: 2
+Negative words: 0
+Sentiment Score: 2
+Result: Positive Feedback
+
+Enter student feedback: 9
+
+Positive words: 0
+Negative words: 0
+Sentiment Score: 0
+Result: Neutral Feedback
+
+Enter student feedback: teaching is bad and boring
+
+Positive words: 0
+Negative words: 2
+Sentiment Score: -2
+Result: Negative Feedback
+
+Enter student feedback: 
+
+=== Execution Timed Out ===
